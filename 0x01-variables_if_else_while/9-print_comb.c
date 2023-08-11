@@ -18,6 +18,5 @@ int main(void)
 			putchar(44);
 		putchar(' ');
 	}
-	
 	return (0);
 }
