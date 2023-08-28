@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
 * _strchr - locates a chracter
 * @s: first operand
@@ -16,5 +15,5 @@ char *_strchr(char *s, char c)
 		if (c == *(s + i))
 			return (s + i);
 	}
-	return (NULL);
+	return ('\0');
 }
