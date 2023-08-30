@@ -11,7 +11,7 @@ int is_prime_number(int n)
 		return (1);
 	if (n < 2)
 		return (0);
-	help_prime(n, n / 2, 2);
+	return (help_prime(n, n / 2, 2));
 }
 /**
 * help_prime - checks if number is prime or not
