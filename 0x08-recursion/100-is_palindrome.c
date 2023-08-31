@@ -8,6 +8,7 @@
 int is_palindrome(char *s)
 {
 	char *a, *b;
+
 	if (*s == ' ')
 		return (1);
 
@@ -28,6 +29,7 @@ int is_palindrome(char *s)
 int help_pal(char *s, char *a, char *b)
 {
 	char *y, *z;
+
 	if (*s != '\0')
 		return (help_pal(s + 1, a, b));
 
