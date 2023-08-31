@@ -7,35 +7,41 @@
 */
 int is_palindrome(char *s)
 {
-	char *a, *b;
+	char *rev;
 
 	if (*s == ' ')
 		return (1);
 
-	a = s;
-	b = s + 1;
-	return (help_pal(s, a, b));
+	rev = reverse_pal(s);
+	return (help_pal(s, rev));
 }
 
 /**
 * help_pal - checks strings palindrome
 * @s: first operand
-* @a: second operand
-* @b: third operand
+* @rev: second operand
 *
 * Return: 0 or 1
 */
 
-int help_pal(char *s, char *a, char *b)
+int help_pal(char *s, char *rev)
 {
-	char *y, *z;
+	if (*s == *rev && *s != '\0')
+		return (help_pal(s + 1, rev - 1));
 
-	if (*s != '\0')
-		return (help_pal(s + 1, a, b));
-
-	z = s - 1;
-	y = s - 2;
-	if (*a == *z && *b == *y)
+	if (*s == '\0')
 		return (1);
 	return (0);
+}
+/**
+* reverse_pal - return reverse string
+* @s: first operand
+*
+* Return: return poniter
+*/
+char *reverse_pal(char *s)
+{
+	if (*s != '\0')
+		return (reverse_pal(s + 1));
+	return (s - 1);
 }
