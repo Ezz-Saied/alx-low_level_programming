@@ -7,9 +7,9 @@
 */
 int is_palindrome(char *s)
 {
-	if (*s == " ")
-		return (1);
 	char *a, *b;
+	if (*s == ' ')
+		return (1);
 
 	a = s;
 	b = s + 1;
@@ -27,9 +27,9 @@ int is_palindrome(char *s)
 
 int help_pal(char *s, char *a, char *b)
 {
+	char *y, *z;
 	if (*s != '\0')
 		return (help_pal(s + 1, a, b));
-	char *y, *z;
 
 	z = s - 1;
 	y = s - 2;
