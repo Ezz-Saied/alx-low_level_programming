@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 /**
 * main - Entry point
 * Description: 'the program's description'
@@ -10,7 +9,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int x;
+	int x, cents = 0;
 
 	if (argc != 2)
 	{
@@ -23,7 +22,32 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-
-	printf("%d\n", calc_cents(x));
-	return (0);
+	while (x != 0)
+	{
+		if (x % 25 == 0)
+		{
+			x = x - 25;
+			cents++;
+		}
+		else if (x % 10 == 0)
+		{
+			x = x - 10;
+			cents++;
+		}
+		else if (x % 5 == 0)
+		{
+			x = x - 5;
+			cents++;
+		}
+		else if (x % 2 == 0)
+		{
+			x = x - 2;
+			cents++;
+		}
+		else
+		{
+			x = x - 1;
+			cents++;
+		}
+	}
 }
