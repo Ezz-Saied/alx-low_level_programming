@@ -38,33 +38,27 @@ int calc_cents(int x)
 {
 	int cents = 0;
 
-	while (x != 0)
+	while (x >= 25)
 	{
-		if (x % 25 == 0)
-		{
-			x = x - 25;
-			cents++;
-		}
-		else if (x % 10 == 0)
-		{
-			x = x - 10;
-			cents++;
-		}
-		else if (x % 5 == 0)
-		{
-			x = x - 5;
-			cents++;
-		}
-		else if (x % 2 == 0)
-		{
-			x = x - 2;
-			cents++;
-		}
-		else
-		{
-			x = x - 1;
-			cents++;
-		}
+		x -= 25;
+		cents++;
 	}
+	while (x >= 10)
+	{
+		x -= 10;
+		cents++;
+	}
+	while (x >= 5)
+	{
+		x -= 5;
+		cents++;
+	}
+	while (x >= 2)
+	{
+		x -= 2;
+		cents++;
+	}
+	if (x == 1)
+		cents++;
 	return (cents);
 }
