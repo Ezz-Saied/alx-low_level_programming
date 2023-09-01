@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+int calc_cents(int x);
 /**
 * main - Entry point
-* Description: 'the program's description'
 * @argc: describe the parameter
 * @argv: seond operand
 * Return: Always 0 (Success)
 */
 int main(int argc, char *argv[])
 {
-	int x, cents = 0;
+	int x, res;
 
 	if (argc != 2)
 	{
@@ -22,6 +22,22 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
+	x = atoi(argv[1]);
+	res = calc_cents(x);
+	printf("%d\n", res);
+	return (0);
+}
+/**
+* calc_cents - return n of cents
+* @x: first operand
+*
+* Return: n of cents
+*/
+
+int calc_cents(int x)
+{
+	int cents = 0;
+
 	while (x != 0)
 	{
 		if (x % 25 == 0)
@@ -50,4 +66,5 @@ int main(int argc, char *argv[])
 			cents++;
 		}
 	}
+	return (cents);
 }
