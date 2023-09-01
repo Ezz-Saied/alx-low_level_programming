@@ -37,6 +37,5 @@ int calc_cents(int x)
 			cents++;
 		}
 	}
-	printf("%d\n", cents);
-	return (0);
+	return (cents);
 }
