@@ -9,22 +9,21 @@
 */
 char *argstostr(int ac, char **av)
 {
-	int i, j;
-	char **arr;
+	int i;
+	char *arr;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	arr = malloc(sizeof(char *) * ac);
+	arr = malloc(sizeof(char) * ac);
 	if (arr == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
-		arr[i] = av[i];
+		arr[i] = *av[i];
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; arr[i][j] != '\0'; j++)
-			_putchar(arr[i][j]);
+		_putchar(arr[i]);
 
 		_putchar('\n');
 	}
-	return (*arr);
+	return (arr);
 }
