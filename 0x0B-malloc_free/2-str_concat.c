@@ -14,10 +14,13 @@ char *str_concat(char *s1, char *s2)
 	int size, i, j;
 	char *arr;
 
+
 	size = size_string(s1, s2);
 	arr = malloc(sizeof(char) * size);
 	if (arr == NULL)
 		return (NULL);
+	if (s1 == NULL && s2 == NULL)
+		return ("");
 	i = 0;
 	if (s1 != NULL)
 	{
@@ -56,16 +59,24 @@ int size_string(char *s1, char *s2)
 
 	size = 0;
 	i = 0;
-	while (*(s1 + i) != '\0')
+	
+	if (s1 != NULL)
 	{
-		i++;
-		size++;
+		while (*(s1 + i) != '\0')
+		{
+			i++;
+			size++;
+		}
+	
+		i = 0;
 	}
-	i = 0;
-	while (*(s2 + i) != '\0')
+	if (s2 != NULL)
 	{
-		i++;
-		size++;
+		while (*(s2 + i) != '\0')
+		{
+			i++;
+			size++;
+		}
 	}
 	return (size + 1);
 }
