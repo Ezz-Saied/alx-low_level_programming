@@ -12,22 +12,18 @@ int size_string(char *s1);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *arr;
-	int size_s1, i;
-	unsigned int j;
+	unsigned int size_s1,size_s2, i, j;
 
 	size_s1 = size_string(s1);
+	size_s2 = size_string(s2);
 	if (s2 == NULL)
-	{
 		s2 = "";
-		n = 0;
-	}
 	if (s1 == NULL)
-	{
 		s1 = "";
-		size_s1 = 0;
-	}
+	if (n > size_s2)
+		n = size_s2;
 
-	arr = malloc(sizeof(char) * (size_s1 + n));
+	arr = malloc(sizeof(char) * (size_s1 + n + 1));
 	if (arr == NULL)
 		return (NULL);
 	for (i = 0; *(s1 + i) != '\0'; i++)
@@ -63,5 +59,5 @@ int size_string(char *s1)
 			size++;
 		}
 	}
-	return (size + 1);
+	return (size);
 }
