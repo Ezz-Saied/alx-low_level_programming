@@ -17,9 +17,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	size_s1 = size_string(s1);
 	if (s2 == NULL)
+	{
 		s2 = "";
+		n = 0;
+	}
 	if (s1 == NULL)
+	{
 		s1 = "";
+		size_s1 = 0;
+	}
 
 	arr = malloc(sizeof(char) * (size_s1 + n));
 	if (arr == NULL)
