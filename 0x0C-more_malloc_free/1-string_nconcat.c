@@ -47,7 +47,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 */
 int size_string(char *s1)
 {
-	int size, i;
+	unsigned int size, i;
 
 	size = 0;
 	i = 0;
