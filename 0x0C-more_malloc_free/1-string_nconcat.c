@@ -12,7 +12,7 @@ int size_string(char *s1);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *arr;
-	unsigned int size_s1,size_s2, i, j;
+	unsigned int size_s1, size_s2, i, j;
 
 	size_s1 = size_string(s1);
 	size_s2 = size_string(s2);
