@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include "dog.h"
+/**
+* print_dog - checks letters in lower case
+* @d: first operand
+*
+*/
+void print_dog(struct dog *d)
+{
+	if (d != NULL)
+	{
+		if (d->name == NULL)
+			printf("Name: (nil)\n");
+		else
+			printf("%s\n", d->name);
+		printf("%f\n", d->age);
+		if (d->owner == NULL)
+			printf("Owner: (nil)\n");
+		else
+			printf("%s\n", d->owner);
+	}
+}
