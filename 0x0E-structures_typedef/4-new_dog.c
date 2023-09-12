@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
 /**
@@ -36,5 +35,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	for (i = 0; owner[i]; i++)
 		x->owner[i] = owner[i];
 	x->owner[i] = '\0';
+	x->age = age;
 	return (x);
 }
