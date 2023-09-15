@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
 * print_all - sum arguments
 * @format: first operand
