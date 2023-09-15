@@ -1,6 +1,5 @@
 #include "function_pointers.h"
 #include <stdlib.h>
-#include <stddef.h>
 /**
 * print_name - print name
 * @name: first operand
