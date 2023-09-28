@@ -1,23 +1,21 @@
 #include "main.h"
 /**
-* _strcat - concacenate two strings
+* _strcat - func
 * @dest: first operand
 * @src: second operand
 *
-* Return: pointer to string
+* Return: pointer
 */
 char *_strcat(char *dest, char *src)
 {
 	int i, j;
 
-	j = 6;
-
-	for (i = 0; *(src + i) != '\0'; i++)
+	for (i = 0; dest[i] != '\0'; i++)
+		;
+	for (j = 0; src[j] != '\0'; j++)
 	{
-		*(dest + j) = *(src + i);
-		j++;
+		dest[i] = src[j];
+		i++;
 	}
-	*(dest + j) = '\0';
 	return (dest);
 }
-
