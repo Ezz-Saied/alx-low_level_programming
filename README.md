@@ -1,1 +1,1 @@
-first day of c with betty style rules
+this is a read me file
